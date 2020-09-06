@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @since 27th August 2020
  * <p> Last updated on 5th September 2020
  */
-public class RenderObject extends Component{
+public class RenderObject{
     /**
      * type of the object, 
      * <p><strong>SPRITE</strong> for renderable object
@@ -27,7 +27,7 @@ public class RenderObject extends Component{
      */
     public String name;
     /**
-     * Description of an object, if ObjectType is TEXT, then the description is going to be the text that is displayed
+     * <p>Description of an object, if ObjectType is TEXT, then the description is going to be the text that is displayed
      */
     public String description;
     /**
@@ -92,12 +92,11 @@ public class RenderObject extends Component{
      * @param obj Input class of component that you want to get
      * @return Component object through which the subclass can be accessed
      */
-    public Object getComponent(Class obj)
+    public Object getComponent(Object obj)
     {
         for(int i = 0; i < components.size(); i++)
         {
-            Class c = obj;
-            if(components.get(i) instanceof c){
+            if(components.get(i) instanceof obj){
                 System.out.println("return the component");
             } else {
             }

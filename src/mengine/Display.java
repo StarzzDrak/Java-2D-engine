@@ -1,6 +1,7 @@
 package mengine;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
@@ -11,7 +12,7 @@ import javax.swing.JPanel;
  * <p> This class is used to display scenes on screen
  * 
  * @since 27th August 2020 
- * <p> Last updated on 5th September 2020
+ * <p> Last updated on 6th September 2020
  * @see Scene
  */
 public class Display extends JPanel{
@@ -33,7 +34,7 @@ public class Display extends JPanel{
     {
         Graphics2D g2d = (Graphics2D) g;
         g.setColor(Color.BLACK);
-        g.drawLine(0, 0, 1, 200);
+        g.drawLine(0, 0, 10, 200);
         
         System.out.println(scene.toRender.size());
         if(scene.toRender.size() > 0){
@@ -44,10 +45,8 @@ public class Display extends JPanel{
                 case SPRITE:
                     break;
                 case TEXT:
-                    //Transform t = (Transform) obj.getComponent(Transform.class);
                     System.out.println(scene.toRender.get(i).description);
-                    //g2d.drawChars(scene.toRender.get(i).description.toCharArray(), 10, 10, 100, 20);
-                    g2d.drawString("hey", 0, 0);
+                    g2d.drawString(scene.toRender.get(i).description, 100, 100);
                     break;
 
             }

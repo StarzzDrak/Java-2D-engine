@@ -7,30 +7,32 @@ public class main {
     public static void main(String[] args) {
         
         Display display;
+        
+        //Initializing mengine
         Mengine mengine = new Mengine();
         mengine.initialize();
-        SceneManager sceneManager = mengine.getSceneManager();
         display = mengine.getDisplay();
-        sceneManager.setDisplay(display);
         
-        RenderObject obj = new RenderObject(ObjectType.TEXT,"yeet","yeet");
-        obj.addComponent(new Transform(10,10,0,10,10));
+        //Setting up new scene
+        SceneManager sceneManager = new SceneManager();
+        Scene scene = sceneManager.createNewScene("main");
         
-        Scene scene = sceneManager.createNewScene("mainScene");
+        //Creating new object in the scene
+        RenderObject obj = new RenderObject(ObjectType.TEXT, "Text", "Text");
+        Transform t = new Transform(10,10,0,100,20);
+        obj.addComponent(t);
         scene.addObject(obj);
-        System.out.println("Scene size: " + scene.toRender.size());
-        sceneManager.loadScene(scene);
-        System.out.println(sceneManager.scenes.get(0).name);
         
+        display.loadScene(scene);
         
         JFrame frame = new JFrame("test");
         frame.setSize(640, 480);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(mengine.getDisplay());
+        frame.add(display);
         frame.setResizable(false);
         frame.setVisible(true);
         
-        display.repaint();
+        //loop.start();
     }
     
 }

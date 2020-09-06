@@ -58,6 +58,15 @@ public class Scene {
     {
         /*int smallest = Integer.MIN_VALUE;
         ArrayList<RenderObject> objs = new ArrayList<>();
+        
+        for(int i = 0; i < toRender.size(); i++)
+        {
+            if()
+            {
+            
+            }
+        }
+        
         toRender = objs;*/
     }
 }
