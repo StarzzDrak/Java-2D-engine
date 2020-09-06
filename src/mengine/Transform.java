@@ -23,6 +23,9 @@ public class Transform extends Component{
         position = new Position(posx, posy, posz);
         size = new Size(sizex, sizey);
     }
+
+    Transform() {
+    }
     /**
      * <p> Updates location of and object
      * @param x - amount of pixels to move on a x axis

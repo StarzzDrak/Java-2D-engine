@@ -40,13 +40,15 @@ public class Display extends JPanel{
         if(scene.toRender.size() > 0){
         for(int i = 0; i < scene.toRender.size(); i++)
         {
+            RenderObject obj = scene.toRender.get(i);
             switch(scene.toRender.get(i).getObjectType())
             {
                 case SPRITE:
                     break;
                 case TEXT:
                     System.out.println(scene.toRender.get(i).description);
-                    g2d.drawString(scene.toRender.get(i).description, 100, 100);
+                    Transform t = (Transform)obj.getComponent(new Transform());
+                    g2d.drawString(obj.description, t.position.x, t.position.y);
                     break;
 
             }

@@ -89,16 +89,17 @@ public class RenderObject{
     
     /**
      * <p> Returns requested component
-     * @param obj Input class of component that you want to get
+     * @param c Input class of component that you want to get
      * @return Component object through which the subclass can be accessed
      */
-    public Object getComponent(Object obj)
+    public Component getComponent(Object c)
     {
+        
         for(int i = 0; i < components.size(); i++)
         {
-            if(components.get(i) instanceof obj){
+            if(components.get(i).getClass().isInstance(c)){
                 System.out.println("return the component");
-            } else {
+                return components.get(i);
             }
         }
         return null;

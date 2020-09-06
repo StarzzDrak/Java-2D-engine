@@ -19,7 +19,7 @@ public class main {
         
         //Creating new object in the scene
         RenderObject obj = new RenderObject(ObjectType.TEXT, "Text", "Text");
-        Transform t = new Transform(10,10,0,100,20);
+        Transform t = new Transform(100,100,0,100,20);
         obj.addComponent(t);
         scene.addObject(obj);
         
