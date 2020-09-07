@@ -1,5 +1,6 @@
 package mengine;
 
+import java.awt.image.BufferedImage;
 import javax.swing.JFrame;
 
 public class main {
@@ -12,13 +13,15 @@ public class main {
         Mengine mengine = new Mengine();
         mengine.initialize();
         display = mengine.getDisplay();
+        ImageLoader loader = new ImageLoader();
         
         //Setting up new scene
         SceneManager sceneManager = new SceneManager();
         Scene scene = sceneManager.createNewScene("main");
         
         //Creating new object in the scene
-        RenderObject obj = new RenderObject(ObjectType.TEXT, "Text", "Text");
+        BufferedImage img = loader.loadImage("/Images/example.png");
+        RenderObject obj = new RenderObject(ObjectType.SPRITE, "Text", "Text", img);
         Transform t = new Transform(100,100,0,100,20);
         obj.addComponent(t);
         scene.addObject(obj);

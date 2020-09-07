@@ -1,7 +1,10 @@
 package mengine;
 
+import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.net.URL;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 
 /**
  * @author Milan Savickij
@@ -154,5 +157,4 @@ public class RenderObject{
     {
         return type;
     }
-    
 }
