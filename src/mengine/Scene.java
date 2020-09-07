@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * <p> Hold information about scene, can be rendered on screen in <strong>Display</strong>
  * 
  * @since 27th August 2020
- * 
+ * <p> Last updated on 7th September 2020
  * @see Display
  */
 public class Scene {
@@ -61,9 +61,11 @@ public class Scene {
         
         for(int i = 0; i < toRender.size(); i++)
         {
-            if()
+            RenderObject obj = toRender.get(i);
+            Transform t = (Transform) obj.getComponent(new Transform());
+            if(t.position.z >= smallest)
             {
-            
+                
             }
         }
         

@@ -12,7 +12,7 @@ import javax.swing.JPanel;
  * <p> This class is used to display scenes on screen
  * 
  * @since 27th August 2020 
- * <p> Last updated on 6th September 2020
+ * <p> Last updated on 7th September 2020
  * @see Scene
  */
 public class Display extends JPanel{
@@ -21,7 +21,6 @@ public class Display extends JPanel{
     
     public Display()
     {
-        repaint();
     }
     
     public void loadScene(Scene _scene)
@@ -36,18 +35,17 @@ public class Display extends JPanel{
         g.setColor(Color.BLACK);
         g.drawLine(0, 0, 10, 200);
         
-        System.out.println(scene.toRender.size());
         if(scene.toRender.size() > 0){
         for(int i = 0; i < scene.toRender.size(); i++)
         {
             RenderObject obj = scene.toRender.get(i);
+            Transform t = (Transform)obj.getComponent(new Transform());
             switch(scene.toRender.get(i).getObjectType())
             {
                 case SPRITE:
+                    g2d.drawImage(obj.image, t.position.x, t.position.y, t.size.x, t.size.y, this);
                     break;
                 case TEXT:
-                    System.out.println(scene.toRender.get(i).description);
-                    Transform t = (Transform)obj.getComponent(new Transform());
                     g2d.drawString(obj.description, t.position.x, t.position.y);
                     break;
 

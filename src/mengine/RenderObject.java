@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * <p> Object with which you can manipulate or which can be rendered on screen
  * 
  * @since 27th August 2020
- * <p> Last updated on 5th September 2020
+ * <p> Last updated on 7th September 2020
  */
 public class RenderObject{
     /**
@@ -40,7 +40,7 @@ public class RenderObject{
      * 
      * @see Transform
      */
-    private BufferedImage image;
+    public BufferedImage image;
     
     /**
      * <p> Basic constructor for RenderObject
@@ -66,6 +66,48 @@ public class RenderObject{
         this.type = type;
         this.name = name;
         this.description = description;
+        this.components = components;
+    }
+    /**
+     * <p> Basic constructor for RenderObject
+     * @param type Type of RednerObject
+     * @param name Name
+     * @param image Sprite of the object
+     */
+    public RenderObject(ObjectType type, String name, BufferedImage image)
+    {
+        this.type = type;
+        this.name = name;
+        this.image = image;
+    }
+    /**
+     * <p> Basic constructor for RenderObject
+     * @param type Type of RednerObject
+     * @param name Name
+     * @param description Description/text
+     * @param image Sprite of the object
+     */
+    public RenderObject(ObjectType type, String name, String description, BufferedImage image)
+    {
+    this.type = type;
+        this.name = name;
+        this.description = description;
+        this.image = image;
+    }
+    /**
+     * <p> Advanced constructor for RenderObject
+     * @param type Type of RednerObject
+     * @param name Name
+     * @param description Description/text
+     * @param image Sprite of the object
+     * @param components List of components that will be added
+     */
+    public RenderObject(ObjectType type, String name, String description, BufferedImage image, ArrayList<Component> components)
+    {
+        this.type = type;
+        this.name = name;
+        this.description = description;
+        this.image = image;
         this.components = components;
     }
     

@@ -13,11 +13,14 @@ public class RenderLoop implements Runnable{
     
     private Thread thread;
     
-    boolean running = false;
-    final double UPDATE_CAP = 1.0/60;
+    private double FPS;
     
-    public void start()
+    boolean running = false;
+    final double UPDATE_CAP = 1.0/FPS;
+    
+    public void start(double fps)
     {
+        this.FPS = fps;
         thread = new Thread(this);
         thread.run();
     }

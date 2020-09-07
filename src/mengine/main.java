@@ -32,7 +32,7 @@ public class main {
         frame.setResizable(false);
         frame.setVisible(true);
         
-        //loop.start();
+        //loop.start(60.0);
     }
     
 }
