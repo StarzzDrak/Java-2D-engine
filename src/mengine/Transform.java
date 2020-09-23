@@ -15,8 +15,8 @@ public class Transform extends Component{
      * @param posx - x position on screen space 
      * @param posy - y position on screen space
      * @param posz - z position on screen space
-     * @param sizex - width
-     * @param sizey - height
+     * @param sizex - width (0 to use image width)
+     * @param sizey - height (0 to use image height)
      */
     public Transform(int posx, int posy, int posz, int sizex, int sizey)
     {
