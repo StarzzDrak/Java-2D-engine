@@ -45,8 +45,13 @@ public class Display extends JPanel {
                 Transform t = (Transform) obj.getComponent(new Transform());
                 switch (scene.toRender.get(i).getObjectType()) {
                     case SPRITE:
-                        //g2d.drawImage(obj.image, t.position.x, t.position.y, t.size.x, t.size.y, this);
-                        g2d.drawImage(obj.image, t.position.x, t.position.y, this)
+                        if(t.size.x == 0 || t.size.y == 0) 
+                        {
+                        	g2d.drawImage(obj.image, t.position.x, t.position.y, this);
+                        } else 
+                        {
+                        	g2d.drawImage(obj.image, t.position.x, t.position.y, t.size.x, t.size.y, this);
+                        }
                         break;
                     case TEXT:
                         g2d.drawString(obj.description, t.position.x, t.position.y);
