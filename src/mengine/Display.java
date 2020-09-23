@@ -1,13 +1,13 @@
 package mengine;
 
 import java.awt.Color;
-import java.awt.Font;
+//import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.net.URL;
-import javax.swing.ImageIcon;
+//import java.awt.Image;
+//import java.awt.image.BufferedImage;
+//import java.net.URL;
+//import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 /**
@@ -46,7 +46,7 @@ public class Display extends JPanel {
                 switch (scene.toRender.get(i).getObjectType()) {
                     case SPRITE:
                         //g2d.drawImage(obj.image, t.position.x, t.position.y, t.size.x, t.size.y, this);
-                        g2d.drawImage(obj.image, t.position.x, t.position.y, this)
+                        g2d.drawImage(obj.image, t.position.x, t.position.y, this);
                         break;
                     case TEXT:
                         g2d.drawString(obj.description, t.position.x, t.position.y);

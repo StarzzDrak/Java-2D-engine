@@ -20,9 +20,9 @@ public class main {
         Scene scene = sceneManager.createNewScene("main");
         
         //Creating new object in the scene
-        BufferedImage img = loader.loadImage("/Images/example.png");
+        BufferedImage img = loader.loadImage("/Images/02.png");
         RenderObject obj = new RenderObject(ObjectType.SPRITE, "Text", "Text", img);
-        Transform t = new Transform(100,100,0,100,20);
+        Transform t = new Transform(100,100,0,25,25);
         obj.addComponent(t);
         scene.addObject(obj);
         
