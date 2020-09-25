@@ -113,6 +113,23 @@ public class RenderObject{
         this.image = image;
         this.components = components;
     }
+
+    public RenderObject(ObjectType type, String name, String description, BufferedImage image, Component com)
+    {
+        this.type = type;
+        this.name = name;
+        this.description = description;
+        this.image = image;
+        components.add(com);
+    }
+
+    public RenderObject(ObjectType type, String name, String description, Component comp)
+    {
+        this.type = type;
+        this.name = name;
+        this.description = description;
+        components.add(comp);
+    }
     
     /**
      * <p> Adds component to list of components on an object

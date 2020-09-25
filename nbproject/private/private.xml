@@ -2,6 +2,18 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/GitHub/Mengine/src/mengine/Component.java</file>
+            <file>file:/D:/GitHub/Mengine/src/mengine/SceneManager.java</file>
+            <file>file:/D:/GitHub/Mengine/src/mengine/Mengine.java</file>
+            <file>file:/D:/GitHub/Mengine/src/mengine/Scene.java</file>
+            <file>file:/D:/GitHub/Mengine/src/mengine/main.java</file>
+            <file>file:/D:/GitHub/Mengine/src/mengine/ObjectType.java</file>
+            <file>file:/D:/GitHub/Mengine/src/mengine/RenderLoop.java</file>
+            <file>file:/D:/GitHub/Mengine/src/mengine/Display.java</file>
+            <file>file:/D:/GitHub/Mengine/src/mengine/Transform.java</file>
+            <file>file:/D:/GitHub/Mengine/src/mengine/RenderObject.java</file>
+            <file>file:/D:/GitHub/Mengine/src/mengine/ImageLoader.java</file>
+        </group>
     </open-files>
 </project-private>
