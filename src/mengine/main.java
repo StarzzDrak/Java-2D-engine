@@ -39,8 +39,9 @@ public class main {
         frame.add(display);
         frame.setResizable(false);
         frame.setVisible(true);
-        
-        //loop.start(60.0);
+
+        mengine.addLoopEventListener(new LoopEventListener());
+        mengine.startEngineLoop(10.0);
     }
     
 }

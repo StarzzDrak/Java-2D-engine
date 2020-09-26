@@ -54,5 +54,21 @@ public class Mengine {
     {
     
     }
-    
+
+    /**
+     * <p> Adds LoopEvent listener
+     * @param listener LoopEven listener that should be added
+     */
+    public void addLoopEventListener(LoopEvent listener)
+    {
+        renderLoop.addLoopEventListeners(listener);
+    }
+
+    public void startEngineLoop(double fps)
+    {
+        if(fps == 0) {
+            fps = 60.0;
+        }
+        renderLoop.start(fps);
+    }
 }

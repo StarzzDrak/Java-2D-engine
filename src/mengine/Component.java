@@ -1,4 +1,3 @@
 package mengine;
+public class Component { }
 
-public class Component {
-}

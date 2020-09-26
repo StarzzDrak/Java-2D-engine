@@ -1,26 +1,30 @@
 package mengine;
 
-interface Loop
-{
-    public void update();
-}
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
  * @author Milan
  */
 public class RenderLoop implements Runnable{
-    
+
+    public List<LoopEvent> listeners;
+
     private Thread thread;
     
-    private double FPS;
-    
     boolean running = false;
-    final double UPDATE_CAP = 1.0/FPS;
-    
+    double UPDATE_CAP;
+
+    public RenderLoop()
+    {
+        this.listeners = new ArrayList<>();
+    }
+
     public void start(double fps)
     {
-        this.FPS = fps;
+        System.out.println("Start");
+        this.UPDATE_CAP = 1.0/fps;
         thread = new Thread(this);
         thread.run();
     }
@@ -32,6 +36,7 @@ public class RenderLoop implements Runnable{
     
     public void run()
     {
+        //System.out.println("Run");
         running = true;
         
         boolean render = false;
@@ -46,6 +51,7 @@ public class RenderLoop implements Runnable{
         
         while(running)
         {
+            //System.out.println("Yeet");
             render = false;
             firstTime = System.nanoTime() / (10*Math.pow(10, 8));
             passedTime = firstTime-lastTime;
@@ -97,9 +103,19 @@ public class RenderLoop implements Runnable{
      */
     public void update()
     {
+        //System.out.println("update");
+        for(LoopEvent listener : listeners)
+        {
+            listener.update();
+        }
     }
     
     public void render()
     {
+    }
+
+    public void addLoopEventListeners(LoopEvent listener)
+    {
+        listeners.add(listener);
     }
 }

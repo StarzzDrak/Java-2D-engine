@@ -54,7 +54,7 @@ public class Display extends JPanel {
                         }
                         break;
                     case TEXT:
-                        g2d.drawString(obj.description, t.position.x, t.position.y);
+                            g2d.drawString(obj.description, t.position.x, t.position.y);
                         break;
 
                 }
