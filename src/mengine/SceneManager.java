@@ -10,8 +10,8 @@ import java.util.ArrayList;
  */
 public class SceneManager {
 
-    private Display display;
-    ArrayList<Scene> scenes = new ArrayList<>();
+    private static Display display;
+    static ArrayList<Scene> scenes = new ArrayList<>();
     /**
      * <p>Creates new scene with new index through which you can access it
      * 
@@ -21,23 +21,48 @@ public class SceneManager {
     public Scene createNewScene(String name)
     {
         Scene scene = new Scene(name);
+        scene.index = scenes.size();
         scenes.add(scenes.size(), scene);
         return scene;
     }
     
-    public void loadScene(int index)
+    public static void loadScene(int index)
     {
         display.loadScene(scenes.get(index));
     }
     
-    public void loadScene(Scene scene)
+    public static void loadScene(Scene scene)
     {
         display.loadScene(scene);
     }
     
-    public void setDisplay(Display d)
+    public static void setDisplay(Display d)
     {
-        this.display = d;
+        display = d;
+    }
+
+    public static Scene getScene(String name)
+    {
+        for(Scene sc : scenes)
+        {
+            if(sc.name == name)
+            {
+                return sc;
+            }
+        }
+        return null;
+    }
+
+    public static Scene getScene(int id)
+    {
+        for(Scene sc : scenes)
+        {
+            if(sc.index == id)
+            {
+                return sc;
+            }
+        }
+        return null;
     }
     
 }

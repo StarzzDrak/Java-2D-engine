@@ -21,7 +21,7 @@ public class Scene {
      */
     public String name;
     
-    ArrayList<RenderObject> toRender = new ArrayList<>();
+    static ArrayList<RenderObject> toRender = new ArrayList<>();
     /**
      * <p> Creates new scene with specified parameters
      * 
@@ -70,5 +70,22 @@ public class Scene {
         }
         
         toRender = objs;*/
+    }
+
+    /**
+     * <p> Finds needed object by its name
+     * @param name Name of the object
+     * @return Object found
+     */
+    public static RenderObject FindObject(String name)
+    {
+        for(RenderObject obj : toRender)
+        {
+            if(obj.name == name)
+            {
+                return obj;
+            }
+        }
+        return null;
     }
 }

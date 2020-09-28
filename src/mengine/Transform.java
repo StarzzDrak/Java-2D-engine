@@ -39,70 +39,12 @@ public class Transform extends Component{
         position.z += z;
     }
     /**
-     * <p>Changes objects location
-     * @param x - position on x axis in screen space
-     * @param y - position on y axis in screen space
-     * @param z - position on z axis in screen space
-     */
-    /*public void setPosition(int x, int y, int z)
-    {
-        this.posX = x;
-        this.posY = y;
-        this.posZ = z;
-    }*/
-    /**
-     *
-     * @param axis - requested axis
-     * @return returns the position on requested axis, if axis isn't entered in allowed format returns 0
-     */
-    /*public int getPosition(String axis)
-    {
-        switch(axis)
-        {
-            case "x":
-                return posX;
-            case "y":
-                return posY;
-            case "z":
-                return posZ;
-            case "X":
-                return posX;
-            case "Y":
-                return posY;
-            case "Z":
-                return posZ;
-        }
-        return 0;
-    }*/
-    
-    /**
-     *
-     * @param axis - requested axis
-     * @return returns the size on requested axis, if axis isn't entered in allowed format returns 0
-     */
-    /*public int getSize(String axis)
-    {
-        switch(axis)
-        {
-            case "x":
-                return sizeX;
-            case "y":
-                return sizeY;
-            case "X":
-                return sizeX;
-            case "Y":
-                return sizeY;
-        }
-        
-        return 0;
-    }*/
-    /**
      * <p> Used to access position of an object in screen space
      */
     public class Position
     {
         
-        int x,y,z;
+        public int x,y,z;
         /**
          * <p> Sets x coordinates of an object
          * @param x 
@@ -137,8 +79,8 @@ public class Transform extends Component{
     
     public class Size
     {
-        int x, y;
-        
+        public int x, y;
+
         public Size(int x)
         {
             this.x = x;

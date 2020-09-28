@@ -13,6 +13,7 @@ public class Mengine {
     private Display display;
     private SceneManager sceneManager;
     private RenderLoop renderLoop;
+
     /**
      * <p> initializes everything needed to work
      */

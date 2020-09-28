@@ -24,13 +24,13 @@ import javax.swing.JPanel;
  */
 public class Display extends JPanel {
 
-    Scene scene;
+    static Scene scene;
 
     public Display() {
     }
 
-    public void loadScene(Scene _scene) {
-        this.scene = _scene;
+    public static void loadScene(Scene _scene) {
+        scene = _scene;
     }
 
     @Override
