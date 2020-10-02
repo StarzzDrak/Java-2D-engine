@@ -23,7 +23,7 @@ public class RenderLoop implements Runnable{
 
     public void start(double fps)
     {
-        System.out.println("Start");
+        //System.out.println("Start");
         this.UPDATE_CAP = 1.0/fps;
         thread = new Thread(this);
         thread.run();

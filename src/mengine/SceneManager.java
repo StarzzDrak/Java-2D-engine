@@ -26,17 +26,17 @@ public class SceneManager {
         return scene;
     }
     
-    public static void loadScene(int index)
+    public void loadScene(int index)
     {
         display.loadScene(scenes.get(index));
     }
     
-    public static void loadScene(Scene scene)
+    public void loadScene(Scene scene)
     {
         display.loadScene(scene);
     }
     
-    public static void setDisplay(Display d)
+    public void setDisplay(Display d)
     {
         display = d;
     }

@@ -22,17 +22,18 @@ public class main {
         
         //Creating new object in the scene
         BufferedImage img = loader.loadImage("/Images/example.png");
-        Transform t = new Transform(100,100,0,10,10);
-        RenderObject obj = new RenderObject(ObjectType.SPRITE, "Image", "Text", img, t);
+        Transform t = new Transform(100,100,0,0,0);
+        RenderObject obj = new RenderObject(ObjectType.SPRITE, "Image", "Text",img,t);
         obj.addComponent(t);
 
-        t = new Transform(100,50,0,100,50);
-        RenderObject obj2 = new RenderObject(ObjectType.TEXT, "Text", "Text", t);
+        /*t = new Transform(100,50,0,100,50);
+        RenderObject obj2 = new RenderObject(ObjectType.TEXT, "Text", "Text", t);*/
 
-        scene.addObject(obj2);
+        //scene.addObject(obj2);
         scene.addObject(obj);
 
         ChangeSize cs = new ChangeSize();
+        cs.start();
         mengine.addLoopEventListener(cs);
         
         display.loadScene(scene);

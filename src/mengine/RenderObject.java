@@ -33,6 +33,12 @@ public class RenderObject{
      * <p>Description of an object, if ObjectType is TEXT, then the description is going to be the text that is displayed
      */
     public String description;
+
+    /**
+     * <p> Transform component of an object - temporary
+     */
+    public Transform transform;
+
     /**
      * <p> List containing all of components on this object
      */
@@ -44,7 +50,14 @@ public class RenderObject{
      * @see Transform
      */
     public BufferedImage image;
-    
+
+    public RenderObject(ObjectType type, String name, String description, Transform trans)
+    {
+        this.type = type;
+        this.name = name;
+        this.description = description;
+        this.transform = trans;
+    }
     /**
      * <p> Basic constructor for RenderObject
      * @param type Type of RenderObject
@@ -70,6 +83,14 @@ public class RenderObject{
         this.name = name;
         this.description = description;
         this.components = components;
+    }
+
+    public RenderObject(ObjectType type, String name,String description, BufferedImage image, Transform trans)
+    {
+        this.type = type;
+        this.name = name;
+        this.image = image;
+        this.transform = trans;
     }
     /**
      * <p> Basic constructor for RenderObject
@@ -114,22 +135,22 @@ public class RenderObject{
         this.components = components;
     }
 
-    public RenderObject(ObjectType type, String name, String description, BufferedImage image, Component com)
+    /*public RenderObject(ObjectType type, String name, String description, BufferedImage image, Component com)
     {
         this.type = type;
         this.name = name;
         this.description = description;
         this.image = image;
         components.add(com);
-    }
+    }*/
 
-    public RenderObject(ObjectType type, String name, String description, Component comp)
+    /*public RenderObject(ObjectType type, String name, String description, Component comp)
     {
         this.type = type;
         this.name = name;
         this.description = description;
         components.add(comp);
-    }
+    }*/
     
     /**
      * <p> Adds component to list of components on an object

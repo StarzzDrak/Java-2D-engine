@@ -24,12 +24,12 @@ import javax.swing.JPanel;
  */
 public class Display extends JPanel {
 
-    static Scene scene;
+    Scene scene;
 
     public Display() {
     }
 
-    public static void loadScene(Scene _scene) {
+    public void loadScene(Scene _scene) {
         scene = _scene;
     }
 
@@ -47,14 +47,14 @@ public class Display extends JPanel {
                     case SPRITE:
                         if(t.size.x == 0 || t.size.y == 0) 
                         {
-                        	g2d.drawImage(obj.image, t.position.x, t.position.y, this);
+                        	g2d.drawImage(obj.image, obj.transform.position.x, obj.transform.position.y, this);
                         } else 
                         {
-                        	g2d.drawImage(obj.image, t.position.x, t.position.y, t.size.x, t.size.y, this);
+                        	g2d.drawImage(obj.image, obj.transform.position.x, obj.transform.position.y, obj.transform.size.x, obj.transform.size.y, this);
                         }
                         break;
                     case TEXT:
-                            g2d.drawString(obj.description, t.position.x, t.position.y);
+                            g2d.drawString(obj.description, obj.transform.position.x, obj.transform.position.y);
                         break;
 
                 }
