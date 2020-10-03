@@ -50,9 +50,15 @@ public class Display extends JPanel{
             for (int i = 0; i < scene.toRender.size(); i++) {
                 RenderObject obj = scene.toRender.get(i);
                 Transform t = (Transform) obj.getComponent(new Transform());
+                
+                if(t.position.x > width || t.position.x + t.size.x < 0 || t.position.y + t.size.y < 0 || t.position.y > height) 
+                {
+                	//System.out.println("Not rendering this");
+                	return;
+                }
+                
                 switch (scene.toRender.get(i).getObjectType()) {
                     case SPRITE:
-                    	if(!(t.position.x >= width) || !(t.position.x + t.size.x <= 0) || !(t.position.y <= height) || !(t.position.y + t.size.y > 0)) {
                     		if(t.size.x == 0 || t.size.y == 0) 
                     		{
                     			g2d.drawImage(obj.image, t.position.x, t.position.y, this);
@@ -60,10 +66,6 @@ public class Display extends JPanel{
                     		{
                     			g2d.drawImage(obj.image, t.position.x, t.position.y, t.size.x, t.size.y, this);
                     		}
-                    	} else 
-                    	{
-                    		System.out.println("Not rendering: " + obj.name);
-                    	}
                         break;
                     case TEXT:
                             g2d.drawString(obj.description, t.position.x, t.position.y);

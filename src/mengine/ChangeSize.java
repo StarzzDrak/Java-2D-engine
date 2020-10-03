@@ -20,7 +20,7 @@ public class ChangeSize implements LoopEvent{
     public void update(double deltaTime) {
         //System.out.println("update " + t.position.x);
         //renderObject.transform.position.x += 5*deltaTime;
-    	t.position.x -= 10*deltaTime;
+    	//t.position.x -= 10*deltaTime;
         //System.out.println(renderObject.transform.position.x);
         //time += deltaTime;
         //System.out.println(deltaTime);
