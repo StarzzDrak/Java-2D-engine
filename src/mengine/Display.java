@@ -4,10 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.net.URL;
-import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 /**
@@ -23,17 +19,20 @@ import javax.swing.JPanel;
  * @see Scene
  */
 public class Display extends JPanel{
-
-    Scene scene;
+	
+	Scene scene;
     public int width = 0;
     public int height = 0;
-    static Graphics2D g2d;
+
 
     public Display() {
     }
-
-    public void loadScene(Scene _scene) {
-        scene = _scene;
+    /**
+     * <p> Loads scene into display's memory and renders it on screen 
+     * @param scene Scene to be loaded
+     */
+    public void loadScene(Scene scene) {
+        this.scene = scene;
     }
     
     public void render() 
@@ -41,11 +40,6 @@ public class Display extends JPanel{
     	repaint();
     }
     
-    public void setFont(Font font) 
-    {
-    	g2d.setFont(font);
-    }
-
     @Override
     public void paint(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
@@ -58,14 +52,17 @@ public class Display extends JPanel{
                 Transform t = (Transform) obj.getComponent(new Transform());
                 switch (scene.toRender.get(i).getObjectType()) {
                     case SPRITE:
-                    	if(!(t.position.x >= width)) {
-                        if(t.size.x == 0 || t.size.y == 0) 
-                        {
-                        	g2d.drawImage(obj.image, t.position.x, t.position.y, this);
-                        } else 
-                        {
-                        	g2d.drawImage(obj.image, t.position.x, t.position.y, t.size.x, t.size.y, this);
-                        }
+                    	if(!(t.position.x >= width) || !(t.position.x + t.size.x <= 0) || !(t.position.y <= height) || !(t.position.y + t.size.y > 0)) {
+                    		if(t.size.x == 0 || t.size.y == 0) 
+                    		{
+                    			g2d.drawImage(obj.image, t.position.x, t.position.y, this);
+                    		} else 
+                    		{
+                    			g2d.drawImage(obj.image, t.position.x, t.position.y, t.size.x, t.size.y, this);
+                    		}
+                    	} else 
+                    	{
+                    		System.out.println("Not rendering: " + obj.name);
                     	}
                         break;
                     case TEXT:

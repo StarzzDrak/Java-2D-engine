@@ -65,6 +65,11 @@ public class Mengine {
     {
         RenderLoop.addLoopEventListeners(listener);
     }
+    
+    public static final void addPhysicsEventListener(PhysicsEvent listener) 
+    {
+    	RenderLoop.addPhysicsEventListeners(listener);
+    }
 
     public static final void startEngineLoop(double fps)
     {

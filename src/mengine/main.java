@@ -14,15 +14,17 @@ public class main {
         Mengine.initialize();
         display = Mengine.getDisplay();
         ImageLoader loader = new ImageLoader();
+        SceneManager sceneManager = Mengine.getSceneManager();
         
         //Setting up new scene
         Scene scene = SceneManager.createNewScene("main");
         
         //Creating new object in the scene
         BufferedImage img = loader.loadImage("/Images/example.png");
-        Transform t = new Transform(100,100,0,0,0);
+        Transform t = new Transform(100,100,0,250,250);
         RenderObject obj = new RenderObject(ObjectType.SPRITE, "Image", "Text",img,t);
         obj.addComponent(t);
+        obj.addComponent(new GravityComponent(0,10.0));
 
         scene.addObject(obj);
 
@@ -41,7 +43,6 @@ public class main {
         frame.setResizable(false);
         frame.setVisible(true);
 
-        Mengine.addLoopEventListener(new LoopEventListener());
         Mengine.startEngineLoop(30.0);
     }
     

@@ -72,8 +72,8 @@ public class RenderLoop implements Runnable{
                 unprocessedTime -= UPDATE_CAP;
                 render = true;
                 //TODO: update all stuff
-                update(Math.sqrt(passedTime)*10);
                 physicsFrames++;
+                update(Math.sqrt(passedTime)*10);
                 
                 if(frameTime >= 1.0)
                 {
@@ -83,7 +83,7 @@ public class RenderLoop implements Runnable{
                     //System.out.println("Fps: " + fps);
                 }
                 
-                if (physicsFrames > 30) 
+                if (physicsFrames > 2) 
                 {
                 	physicsUpdate(Math.sqrt((passedTime*2)*10));
                 	physicsFrames = 0;

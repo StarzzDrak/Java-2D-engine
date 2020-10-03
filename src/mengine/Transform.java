@@ -92,4 +92,10 @@ public class Transform extends Component{
             this.y = y;
         }
     }
+
+	@Override
+	public void append(RenderObject obj) {
+		// TODO Auto-generated method stub
+		
+	}
 }

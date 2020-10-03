@@ -40,7 +40,7 @@ public class Scene {
     {
         toRender.add(obj);
         //obj.addComponent(new Transform(0,0,0,0,0));
-        sort();
+        //sort();
     }
     /**
      * <p> This function will remove specified object from list of objects that will be rendered on screen

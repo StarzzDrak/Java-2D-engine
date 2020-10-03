@@ -139,6 +139,7 @@ public class RenderObject{
     public void addComponent(Component comp)
     {
         components.add(comp);
+        comp.append(this);
     }
     
     /**
