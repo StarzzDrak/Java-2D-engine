@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * <p> Hold information about scene, can be rendered on screen in <strong>Display</strong>
  * 
  * @since 27th August 2020
- * <p> Last updated on 7th September 2020
+ * <p> Last updated on 3rd October 2020
  * @see Display
  */
 public class Scene {
@@ -21,7 +21,7 @@ public class Scene {
      */
     public String name;
     
-    static ArrayList<RenderObject> toRender = new ArrayList<>();
+    public ArrayList<RenderObject> toRender = new ArrayList<>();
     /**
      * <p> Creates new scene with specified parameters
      * 
@@ -77,7 +77,7 @@ public class Scene {
      * @param name Name of the object
      * @return Object found
      */
-    public static RenderObject FindObject(String name)
+    public RenderObject FindObject(String name)
     {
         for(RenderObject obj : toRender)
         {

@@ -6,25 +6,31 @@ import java.util.ArrayList;
 /**
  *
  * @author Milan
+ * 
+ * <p> Last update on 3rd October 2020
  */
 public class RenderLoop implements Runnable{
 
-    public List<LoopEvent> listeners;
+    public static List<LoopEvent> listeners;
+    public static List<PhysicsEvent> phListeners;
 
-    private Thread thread;
+    private static Thread thread;
     
-    boolean running = false;
-    double UPDATE_CAP;
+    public Display display;
+    
+    static boolean running = false;
+    static double UPDATE_CAP;
 
     public RenderLoop()
     {
-        this.listeners = new ArrayList<>();
+        listeners = new ArrayList<>();
+        phListeners = new ArrayList<>();
     }
 
     public void start(double fps)
     {
         //System.out.println("Start");
-        this.UPDATE_CAP = 1.0/fps;
+        UPDATE_CAP = 1.0/fps;
         thread = new Thread(this);
         thread.run();
     }
@@ -47,6 +53,7 @@ public class RenderLoop implements Runnable{
         
         double frameTime = 0;
         int frames = 0;
+        int physicsFrames = 0;
         int fps = 0;
         
         while(running)
@@ -64,9 +71,9 @@ public class RenderLoop implements Runnable{
             {
                 unprocessedTime -= UPDATE_CAP;
                 render = true;
-                //System.out.println("UPDATE");
                 //TODO: update all stuff
-                update();
+                update(Math.sqrt(passedTime)*10);
+                physicsFrames++;
                 
                 if(frameTime >= 1.0)
                 {
@@ -74,6 +81,12 @@ public class RenderLoop implements Runnable{
                     fps = frames;
                     frames = 0;
                     //System.out.println("Fps: " + fps);
+                }
+                
+                if (physicsFrames > 30) 
+                {
+                	physicsUpdate(Math.sqrt((passedTime*2)*10));
+                	physicsFrames = 0;
                 }
                 
             }
@@ -101,21 +114,35 @@ public class RenderLoop implements Runnable{
     /**
      * <p> This function forces updates in all scripts implementing this class and having update function
      */
-    public void update()
+    private static void update(double deltaTime)
     {
         //System.out.println("update");
         for(LoopEvent listener : listeners)
         {
-            listener.update();
+            listener.update(deltaTime);
         }
     }
     
-    public void render()
+    private static void physicsUpdate(double physicsDeltaTime) 
     {
+    	for(PhysicsEvent listener : phListeners) 
+    	{
+    		listener.physicsUpdate(physicsDeltaTime);
+    	}
+    }
+    
+    private void render()
+    {
+    	display.render();
     }
 
-    public void addLoopEventListeners(LoopEvent listener)
+    public static void addLoopEventListeners(LoopEvent listener)
     {
         listeners.add(listener);
+    }
+    
+    public static void addPhysicsEventListeners(PhysicsEvent listener) 
+    {
+    	phListeners.add(listener);
     }
 }

@@ -18,7 +18,7 @@ public class SceneManager {
      * @param name Name of newly created scene
      * @return returns created scene
      */
-    public Scene createNewScene(String name)
+    public static Scene createNewScene(String name)
     {
         Scene scene = new Scene(name);
         scene.index = scenes.size();

@@ -19,20 +19,31 @@ import javax.swing.JPanel;
  *
  * @since 27th August 2020
  * <p>
- * Last updated on 7th September 2020
+ * Last updated on 3rd October 2020
  * @see Scene
  */
-public class Display extends JPanel implements LoopEvent{
+public class Display extends JPanel{
 
     Scene scene;
     public int width = 0;
     public int height = 0;
+    static Graphics2D g2d;
 
     public Display() {
     }
 
     public void loadScene(Scene _scene) {
         scene = _scene;
+    }
+    
+    public void render() 
+    {
+    	repaint();
+    }
+    
+    public void setFont(Font font) 
+    {
+    	g2d.setFont(font);
     }
 
     @Override
@@ -47,26 +58,25 @@ public class Display extends JPanel implements LoopEvent{
                 Transform t = (Transform) obj.getComponent(new Transform());
                 switch (scene.toRender.get(i).getObjectType()) {
                     case SPRITE:
+                    	if(!(t.position.x >= width)) {
                         if(t.size.x == 0 || t.size.y == 0) 
                         {
-                        	g2d.drawImage(obj.image, obj.transform.position.x, obj.transform.position.y, this);
+                        	g2d.drawImage(obj.image, t.position.x, t.position.y, this);
                         } else 
                         {
-                        	g2d.drawImage(obj.image, obj.transform.position.x, obj.transform.position.y, obj.transform.size.x, obj.transform.size.y, this);
+                        	g2d.drawImage(obj.image, t.position.x, t.position.y, t.size.x, t.size.y, this);
                         }
+                    	}
                         break;
                     case TEXT:
-                            g2d.drawString(obj.description, obj.transform.position.x, obj.transform.position.y);
+                            g2d.drawString(obj.description, t.position.x, t.position.y);
                         break;
+				default:
+					break;
 
                 }
             }
         }
     }
-
-	@Override
-	public void update() {
-		repaint();
-		
-	}
+    
 }

@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
  * <p> Object with which you can manipulate or which can be rendered on screen
  * 
  * @since 27th August 2020
- * <p> Last updated on 7th September 2020
+ * <p> Last updated on 3rd October 2020
  */
 public class RenderObject{
     /**
@@ -35,11 +35,6 @@ public class RenderObject{
     public String description;
 
     /**
-     * <p> Transform component of an object - temporary
-     */
-    public Transform transform;
-
-    /**
      * <p> List containing all of components on this object
      */
     public ArrayList<Component> components = new ArrayList<>(); //TODO: after testing change to private
@@ -50,14 +45,6 @@ public class RenderObject{
      * @see Transform
      */
     public BufferedImage image;
-
-    public RenderObject(ObjectType type, String name, String description, Transform trans)
-    {
-        this.type = type;
-        this.name = name;
-        this.description = description;
-        this.transform = trans;
-    }
     /**
      * <p> Basic constructor for RenderObject
      * @param type Type of RenderObject
@@ -84,14 +71,7 @@ public class RenderObject{
         this.description = description;
         this.components = components;
     }
-
-    public RenderObject(ObjectType type, String name,String description, BufferedImage image, Transform trans)
-    {
-        this.type = type;
-        this.name = name;
-        this.image = image;
-        this.transform = trans;
-    }
+    
     /**
      * <p> Basic constructor for RenderObject
      * @param type Type of RednerObject
@@ -135,22 +115,22 @@ public class RenderObject{
         this.components = components;
     }
 
-    /*public RenderObject(ObjectType type, String name, String description, BufferedImage image, Component com)
+    public RenderObject(ObjectType type, String name, String description, BufferedImage image, Component com)
     {
         this.type = type;
         this.name = name;
         this.description = description;
         this.image = image;
         components.add(com);
-    }*/
+    }
 
-    /*public RenderObject(ObjectType type, String name, String description, Component comp)
+    public RenderObject(ObjectType type, String name, String description, Component comp)
     {
         this.type = type;
         this.name = name;
         this.description = description;
         components.add(comp);
-    }*/
+    }
     
     /**
      * <p> Adds component to list of components on an object

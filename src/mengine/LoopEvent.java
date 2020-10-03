@@ -1,5 +1,6 @@
 package mengine;
 
 public interface LoopEvent {
-    void update();
+	public static double deltaTime = 0;
+    public void update(double deltaTime);
 }

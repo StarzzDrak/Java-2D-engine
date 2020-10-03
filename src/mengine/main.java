@@ -11,14 +11,12 @@ public class main {
         Display display;
         
         //Initializing mengine
-        Mengine mengine = new Mengine();
-        mengine.initialize();
-        display = mengine.getDisplay();
+        Mengine.initialize();
+        display = Mengine.getDisplay();
         ImageLoader loader = new ImageLoader();
         
         //Setting up new scene
-        SceneManager sceneManager = new SceneManager();
-        Scene scene = sceneManager.createNewScene("main");
+        Scene scene = SceneManager.createNewScene("main");
         
         //Creating new object in the scene
         BufferedImage img = loader.loadImage("/Images/example.png");
@@ -26,15 +24,11 @@ public class main {
         RenderObject obj = new RenderObject(ObjectType.SPRITE, "Image", "Text",img,t);
         obj.addComponent(t);
 
-        /*t = new Transform(100,50,0,100,50);
-        RenderObject obj2 = new RenderObject(ObjectType.TEXT, "Text", "Text", t);*/
-
-        //scene.addObject(obj2);
         scene.addObject(obj);
 
         ChangeSize cs = new ChangeSize();
         cs.start();
-        mengine.addLoopEventListener(cs);
+        Mengine.addLoopEventListener(cs);
         
         display.loadScene(scene);
         
@@ -47,8 +41,8 @@ public class main {
         frame.setResizable(false);
         frame.setVisible(true);
 
-        mengine.addLoopEventListener(new LoopEventListener());
-        mengine.startEngineLoop(60.0);
+        Mengine.addLoopEventListener(new LoopEventListener());
+        Mengine.startEngineLoop(30.0);
     }
     
 }
