@@ -181,7 +181,7 @@ public class RenderObject{
         for(int i = 0; i < components.size(); i++)
         {
             if(components.get(i).getClass().isInstance(c)){
-                System.out.println("return the component");
+                //System.out.println("return the component");
                 return components.get(i);
             }
         }

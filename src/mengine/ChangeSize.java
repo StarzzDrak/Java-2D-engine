@@ -22,7 +22,7 @@ public class ChangeSize implements LoopEvent{
     @Override
     public void update() {
         //System.out.println("update " + t.position.x);
-        renderObject.transform.position.x += 5;
-        System.out.println(renderObject.transform.position.x);
+        renderObject.transform.position.x += 1;
+        //System.out.println(renderObject.transform.position.x);
     }
 }

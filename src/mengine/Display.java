@@ -22,9 +22,11 @@ import javax.swing.JPanel;
  * Last updated on 7th September 2020
  * @see Scene
  */
-public class Display extends JPanel {
+public class Display extends JPanel implements LoopEvent{
 
     Scene scene;
+    public int width = 0;
+    public int height = 0;
 
     public Display() {
     }
@@ -36,8 +38,8 @@ public class Display extends JPanel {
     @Override
     public void paint(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.BLACK);
-        g.drawLine(0, 0, 10, 200);
+        g.setColor(Color.WHITE);
+        g.fillRect(0, 0, width, height);
 
         if (scene.toRender.size() > 0) {
             for (int i = 0; i < scene.toRender.size(); i++) {
@@ -61,4 +63,10 @@ public class Display extends JPanel {
             }
         }
     }
+
+	@Override
+	public void update() {
+		repaint();
+		
+	}
 }

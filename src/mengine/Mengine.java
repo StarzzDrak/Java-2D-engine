@@ -23,6 +23,7 @@ public class Mengine {
         sceneManager = new SceneManager();
         sceneManager.setDisplay(display);
         renderLoop = new RenderLoop();
+        renderLoop.addLoopEventListeners(display);
     }
     /**
      * <p> Getter for Display

@@ -40,13 +40,15 @@ public class main {
         
         JFrame frame = new JFrame("test");
         frame.setSize(640, 480);
+        display.width = 640;
+        display.height = 480;
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(display);
         frame.setResizable(false);
         frame.setVisible(true);
 
         mengine.addLoopEventListener(new LoopEventListener());
-        mengine.startEngineLoop(10.0);
+        mengine.startEngineLoop(60.0);
     }
     
 }
