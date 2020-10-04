@@ -1,5 +1,6 @@
 package mengine;
 
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.net.URL;
@@ -33,6 +34,11 @@ public class RenderObject{
      * <p>Description of an object, if ObjectType is TEXT, then the description is going to be the text that is displayed
      */
     public String description;
+    
+    /**
+     * <p>Color of an object, if ObjectType is COLOR
+     */
+    public Color color;
 
     /**
      * <p> List containing all of components on this object
@@ -130,6 +136,14 @@ public class RenderObject{
         this.name = name;
         this.description = description;
         components.add(comp);
+    }
+    
+    public RenderObject(ObjectType type, String name, String description, Color color) 
+    {
+    	this.type = type;
+    	this.name = name;
+    	this.description = description;
+    	this.color = color;
     }
     
     /**

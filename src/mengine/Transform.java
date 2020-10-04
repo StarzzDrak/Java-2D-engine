@@ -4,11 +4,13 @@ package mengine;
  * 
  * <p> This component controls and saves the position and size of an object
  * @since 27th August 2020
- * <p> Last updated on 5th September 2020
+ * <p> Last updated on 4th October 2020
  */
 public class Transform extends Component{
+	
     public Position position;
     public Size size;
+    public boolean isStatic;
     /**
      * <p>Creates new transform component and assigns all the parameters
      * 
@@ -76,7 +78,9 @@ public class Transform extends Component{
             this.z = z;
         }
     }
-    
+    /**
+     * <p> Used to access size of an object
+     */    
     public class Size
     {
         public int x, y;
@@ -92,7 +96,9 @@ public class Transform extends Component{
             this.y = y;
         }
     }
-
+    /**
+     * <p> This function gets called when a component is added to a RenderObject
+     */
 	@Override
 	public void append(RenderObject obj) {
 		// TODO Auto-generated method stub

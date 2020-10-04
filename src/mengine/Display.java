@@ -70,6 +70,10 @@ public class Display extends JPanel{
                     case TEXT:
                             g2d.drawString(obj.description, t.position.x, t.position.y);
                         break;
+                    case COLOR:
+                    	g2d.setColor(obj.color);
+                    	g2d.fillRect(t.position.x, t.position.y, t.size.x, t.size.y);
+                    	break;
 				default:
 					break;
 

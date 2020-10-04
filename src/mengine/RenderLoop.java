@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Milan
- * 
+ * @author Milan Savickij
+ * @since 30th September 2020
  * <p> Last update on 3rd October 2020
  */
 public class RenderLoop implements Runnable{

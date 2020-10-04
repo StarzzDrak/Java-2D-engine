@@ -1,6 +1,7 @@
 package mengine;
 
 
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import javax.swing.JFrame;
 
@@ -24,10 +25,15 @@ public class main {
         Transform t = new Transform(100,100,0,250,250);
         RenderObject obj = new RenderObject(ObjectType.SPRITE, "Image", "Text",img,t);
         obj.addComponent(t);
-        obj.addComponent(new GravityComponent(0,10.0));
+        obj.addComponent(new GravityComponent(10.0));
+        
+        t = new Transform(0, 400, 0, 500, 10);
+        RenderObject obj2 = new RenderObject(ObjectType.COLOR, "Platform", "Collision test", Color.RED);
+        obj2.addComponent(t);
 
         scene.addObject(obj);
-
+        scene.addObject(obj2);
+        
         ChangeSize cs = new ChangeSize();
         cs.start();
         Mengine.addLoopEventListener(cs);

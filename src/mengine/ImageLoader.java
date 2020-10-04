@@ -1,7 +1,6 @@
 package mengine;
 
 import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.net.URL;
 import javax.swing.ImageIcon;
@@ -19,7 +18,6 @@ public class ImageLoader {
      * @param path Path of the image in local package <strong>Usage:</strong> projectPackage/packageOfTheImage/image.imageType
      * @return The loaded image
      */
-    @SuppressWarnings("unused")
 	public BufferedImage loadImage(String path)
     {
         URL url = ImageLoader.class.getResource(path);
