@@ -26,11 +26,13 @@ public class main {
         RenderObject obj = new RenderObject(ObjectType.SPRITE, "Image", "Text",img,t);
         obj.addComponent(t);
         obj.addComponent(new GravityComponent(10.0));
+        obj.addComponent(new Rigidbody());
         PhysicsManager.setGravityConstant(-0.1f);
         
         t = new Transform(0, 400, 0, 500, 10);
         RenderObject obj2 = new RenderObject(ObjectType.COLOR, "Platform", "Collision test", Color.RED);
         obj2.addComponent(t);
+        obj2.addComponent(new Collider(true));
 
         scene.addObject(obj);
         scene.addObject(obj2);

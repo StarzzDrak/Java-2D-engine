@@ -42,6 +42,9 @@ public class Transform extends Component{
     }
     /**
      * <p> Used to access position of an object in screen space
+     * <p> Changing position with this won't work with collisions instead use Rigidbody
+     * 
+     * @see Rigidbody
      */
     public class Position
     {

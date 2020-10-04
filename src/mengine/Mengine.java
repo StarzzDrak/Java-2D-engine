@@ -13,6 +13,7 @@ public class Mengine {
     private static Display display;
     private static SceneManager sceneManager;
     private static RenderLoop renderLoop;
+    private static CollisionsManager collisionsManager;
 
     /**
      * <p> initializes everything needed to work
@@ -21,6 +22,7 @@ public class Mengine {
     {
         display = new Display();
         sceneManager = new SceneManager();
+        collisionsManager = new CollisionsManager();
         sceneManager.setDisplay(display);
         renderLoop = new RenderLoop();
         renderLoop.display = display;
@@ -48,6 +50,14 @@ public class Mengine {
     public static final RenderLoop getRenderLoop()
     {
         return renderLoop;
+    }
+    /**
+     * <p> Getter for CollisionsManager
+     * @return CollisionsManager that was initialized
+     */
+    public static final CollisionsManager getCollisionsManager() 
+    {
+    	return collisionsManager;
     }
     /**
      * <p> Shows capabilities of this engine
