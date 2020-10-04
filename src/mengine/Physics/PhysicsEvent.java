@@ -1,4 +1,4 @@
-package mengine;
+package mengine.Physics;
 
 public interface PhysicsEvent {
 	public static double physicsDeltaTime = 0;

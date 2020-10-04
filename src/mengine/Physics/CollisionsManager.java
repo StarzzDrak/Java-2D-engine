@@ -1,4 +1,4 @@
-package mengine;
+package mengine.Physics;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -10,25 +10,27 @@ import java.util.ArrayList;
  * <p> Last updated on 3rd October 2020
  *
  */
-public class CollisionsManager implements PhysicsEvent{
+public class CollisionsManager implements PhysicsEvent {
 
-	private static List<Collider> colliders;
+	private static List<BoxCollider> colliders;
 	
 	public CollisionsManager() 
 	{
 		colliders = new ArrayList<>();
 	}
 	
-	public static void addCollider(Collider col) 
+	public static void addCollider(BoxCollider col)
 	{
 		colliders.add(col);
 	}
-	
+
+	//Check if new position is intersecting and object, if true dont move
+
 	@Override
 	public void physicsUpdate(double physicsDeltaTime) {
 		// TODO Auto-generated method stub
 		boolean finished = false;
-		Collider dynamicCol;
+		BoxCollider dynamicCol;
 		int i = 0;
 		while(!finished) 
 		{
@@ -37,7 +39,7 @@ public class CollisionsManager implements PhysicsEvent{
 				dynamicCol = colliders.get(i);
 			}
 			
-			for(Collider col : colliders) 
+			for(BoxCollider col : colliders)
 			{
 				if(colliders.get(i).isStatic) 
 				{

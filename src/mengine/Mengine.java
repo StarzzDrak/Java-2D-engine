@@ -1,4 +1,8 @@
 package mengine;
+
+import mengine.Physics.CollisionsManager;
+import mengine.Physics.PhysicsEvent;
+
 /**
  * 
  * @author Milan Savickij
@@ -76,7 +80,7 @@ public class Mengine {
         RenderLoop.addLoopEventListeners(listener);
     }
     
-    public static final void addPhysicsEventListener(PhysicsEvent listener) 
+    public static final void addPhysicsEventListener(PhysicsEvent listener)
     {
     	RenderLoop.addPhysicsEventListeners(listener);
     }

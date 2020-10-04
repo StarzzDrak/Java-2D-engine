@@ -1,5 +1,7 @@
 package mengine;
 
+import mengine.Physics.PhysicsEvent;
+
 import java.util.List;
 import java.util.ArrayList;
 

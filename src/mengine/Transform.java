@@ -1,4 +1,7 @@
 package mengine;
+
+import mengine.Physics.Rigidbody;
+
 /**
  * @author Milan Savickij
  * 
@@ -26,7 +29,7 @@ public class Transform extends Component{
         size = new Size(sizex, sizey);
     }
 
-    Transform() {
+    public Transform() {
     }
     /**
      * <p> Updates location of and object

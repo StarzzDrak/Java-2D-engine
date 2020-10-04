@@ -1,6 +1,10 @@
-package mengine;
+package mengine.Physics;
 
-public class Rigidbody extends Component{
+import mengine.Component;
+import mengine.RenderObject;
+import mengine.Transform;
+
+public class Rigidbody extends Component {
 
 	public boolean isDynamic;
 	public boolean canMove;

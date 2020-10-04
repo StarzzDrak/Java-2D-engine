@@ -1,4 +1,6 @@
-package mengine;
+package mengine.Physics;
+
+import mengine.*;
 
 /**
  * 
@@ -8,7 +10,7 @@ package mengine;
  * <p> Last update on 4th October 2020
  *
  */
-public class GravityComponent extends Component implements PhysicsEvent{
+public class GravityComponent extends Component implements PhysicsEvent {
 
 	public float gravityConstant;
 	public double mass;

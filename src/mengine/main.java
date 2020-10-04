@@ -1,6 +1,11 @@
 package mengine;
 
 
+import mengine.Physics.BoxCollider;
+import mengine.Physics.GravityComponent;
+import mengine.Physics.PhysicsManager;
+import mengine.Physics.Rigidbody;
+
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import javax.swing.JFrame;
@@ -26,13 +31,13 @@ public class main {
         RenderObject obj = new RenderObject(ObjectType.SPRITE, "Image", "Text",img,t);
         obj.addComponent(t);
         obj.addComponent(new GravityComponent(10.0));
-        obj.addComponent(new Rigidbody());
+        obj.addComponent(new Rigidbody(true));
         PhysicsManager.setGravityConstant(-0.1f);
         
         t = new Transform(0, 400, 0, 500, 10);
         RenderObject obj2 = new RenderObject(ObjectType.COLOR, "Platform", "Collision test", Color.RED);
         obj2.addComponent(t);
-        obj2.addComponent(new Collider(true));
+        obj2.addComponent(new BoxCollider(true));
 
         scene.addObject(obj);
         scene.addObject(obj2);
@@ -52,7 +57,7 @@ public class main {
         frame.setResizable(false);
         frame.setVisible(true);
         
-        Mengine.startEngineLoop(30.0);
+        Mengine.startEngineLoop(1000.0);
     }
     
 }
