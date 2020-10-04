@@ -31,6 +31,10 @@ public class RenderLoop implements Runnable{
     {
         //System.out.println("Start");
         UPDATE_CAP = 1.0/fps;
+        for(LoopEvent l : listeners) 
+        {
+        	l.start();
+        }
         thread = new Thread(this);
         thread.run();
     }

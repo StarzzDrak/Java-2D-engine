@@ -26,6 +26,7 @@ public class main {
         RenderObject obj = new RenderObject(ObjectType.SPRITE, "Image", "Text",img,t);
         obj.addComponent(t);
         obj.addComponent(new GravityComponent(10.0));
+        PhysicsManager.setGravityConstant(-0.1f);
         
         t = new Transform(0, 400, 0, 500, 10);
         RenderObject obj2 = new RenderObject(ObjectType.COLOR, "Platform", "Collision test", Color.RED);
@@ -48,7 +49,7 @@ public class main {
         frame.add(display);
         frame.setResizable(false);
         frame.setVisible(true);
-
+        
         Mengine.startEngineLoop(30.0);
     }
     

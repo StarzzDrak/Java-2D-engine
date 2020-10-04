@@ -8,11 +8,8 @@ public class ChangeSize implements LoopEvent{
 
     public void start()
     {
-        System.out.println("hey");
         scene = SceneManager.getScene(0);
-        System.out.println(scene.name);
         renderObject = scene.FindObject("Image");
-        System.out.println("name " + renderObject.name);
         t = (Transform) renderObject.getComponent(new Transform());
     }
 
