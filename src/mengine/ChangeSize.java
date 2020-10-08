@@ -17,7 +17,7 @@ public class ChangeSize implements LoopEvent{
 
     @Override
     public void update(double deltaTime) {
-    	Vector2 v2;
+    	Vector2 v2 = new Vector2(new float[]{1,0});
         t.move(v2);
     }
 }

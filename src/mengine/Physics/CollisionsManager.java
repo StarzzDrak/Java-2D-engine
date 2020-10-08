@@ -51,7 +51,6 @@ public class CollisionsManager implements PhysicsEvent {
 			{
 				
 			}
-			//if() {}
 		}
 		
 		return 0f;

@@ -14,6 +14,7 @@ public class BoxCollider extends Component {
 	
 	public BoxCollider(boolean isStatic)
 	{
+		this.bounds = new Bounds(0,0, 250, 250);
 		this.isStatic = isStatic;
 		CollisionsManager.addCollider(this);
 	}

@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import javax.swing.ImageIcon;
 
 /**
@@ -154,6 +155,19 @@ public class RenderObject{
     {
         components.add(comp);
         comp.append(this);
+    }
+
+    /**
+     * <p>Adds all components to list
+     * @param comp Components Array that will be added
+     */
+    public void addComponents(Component[] comp)
+    {
+        components.addAll(Arrays.asList(comp));
+        for(Component c : comp)
+        {
+            c.append(this);
+        }
     }
     
     /**
