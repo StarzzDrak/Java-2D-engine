@@ -3,6 +3,8 @@ package mengine.Physics;
 import java.util.ArrayList;
 import java.util.List;
 
+import mengine.Vector2;
+
 public class PhysicsManager {
 	
 	private static List<GravityComponent> gComponents = new ArrayList<>();

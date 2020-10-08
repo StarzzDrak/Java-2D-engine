@@ -1,25 +1,23 @@
 package mengine;
 
+import mengine.Physics.Rigidbody;
+
 public class ChangeSize implements LoopEvent{
 
     private RenderObject renderObject;
     private Scene scene;
-    private Transform t;
+    private Rigidbody t;
 
     public void start()
     {
         scene = SceneManager.getScene(0);
         renderObject = scene.FindObject("Image");
-        t = (Transform) renderObject.getComponent(new Transform());
+        t = (Rigidbody) renderObject.getComponent(new Rigidbody());
     }
 
     @Override
     public void update(double deltaTime) {
-        //System.out.println("update " + t.position.x);
-        //renderObject.transform.position.x += 5*deltaTime;
-    	//t.position.x -= 10*deltaTime;
-        //System.out.println(renderObject.transform.position.x);
-        //time += deltaTime;
-        //System.out.println(deltaTime);
+    	Vector2 v2;
+        t.move(v2);
     }
 }

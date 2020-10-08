@@ -10,6 +10,7 @@ import mengine.*;
  * <p> Last update on 4th October 2020
  *
  */
+//TODO: move gravityComponent into rigidbody, use gravity if object is dynamic
 public class GravityComponent extends Component implements PhysicsEvent {
 
 	public float gravityConstant;

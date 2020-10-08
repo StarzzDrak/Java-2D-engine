@@ -30,11 +30,11 @@ public class main {
         Transform t = new Transform(100,100,0,250,250);
         RenderObject obj = new RenderObject(ObjectType.SPRITE, "Image", "Text",img,t);
         obj.addComponent(t);
-        obj.addComponent(new GravityComponent(10.0));
+        //obj.addComponent(new GravityComponent(10.0));
         obj.addComponent(new Rigidbody(true));
         PhysicsManager.setGravityConstant(-0.1f);
         
-        t = new Transform(0, 400, 0, 500, 10);
+        t = new Transform(500, 0, 0, 10, 500);
         RenderObject obj2 = new RenderObject(ObjectType.COLOR, "Platform", "Collision test", Color.RED);
         obj2.addComponent(t);
         obj2.addComponent(new BoxCollider(true));
@@ -57,7 +57,7 @@ public class main {
         frame.setResizable(false);
         frame.setVisible(true);
         
-        Mengine.startEngineLoop(1000.0);
+        Mengine.startEngineLoop(60.0);
     }
     
 }

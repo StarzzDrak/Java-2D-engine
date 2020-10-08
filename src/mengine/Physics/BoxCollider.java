@@ -7,7 +7,10 @@ import mengine.*;
 public class BoxCollider extends Component {
 
 	protected Transform transform;
+	protected Bounds bounds;
 	public boolean isStatic;
+	
+	public BoxCollider() {}
 	
 	public BoxCollider(boolean isStatic)
 	{
@@ -19,6 +22,21 @@ public class BoxCollider extends Component {
 	public void append(RenderObject obj) {
 		transform = (Transform)obj.getComponent(new Transform());
 		
+	}
+	
+	public class Bounds
+	{
+		int x,y;
+		int maxX,maxY;
+		//int mx,my;
+		
+		public Bounds(int x, int y, int width, int height) 
+		{
+			this.x = x;
+			this.y = y;
+			this.maxX = width;
+			this.maxY = height;
+		}
 	}
 
 }
