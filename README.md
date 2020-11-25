@@ -1,5 +1,5 @@
 # Java 2D engine
 # Todo:
-Bug fixes
-Try to make it work with OpenGL
-Optimize collisions
+Bug fixes <br/>
+Try to make it work with OpenGL <br/>
+Optimize collisions <br/>
