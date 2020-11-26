@@ -5,9 +5,9 @@ I wanted to make this project for educational and enterntainment purpose so the 
 And because of that I don't spend much time working on it </br>
 
 # Features (so far)
-Scene Management.
-Rendering images, solid colors and text on screen.
-Physics (Somewhat)
+Scene Management. </br>
+Rendering images, solid colors and text on screen.</br>
+Physics (Somewhat)</br>
 
 # Todo:
 Bug fixes <br/>
