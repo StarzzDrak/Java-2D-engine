@@ -11,5 +11,4 @@ Physics (Somewhat)</br>
 
 # Todo:
 Bug fixes <br/>
-Try to make it work with OpenGL instead of JPanel<br/>
 Optimize collisions <br/>
